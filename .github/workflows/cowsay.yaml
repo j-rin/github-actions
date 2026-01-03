@@ -1,0 +1,15 @@
+name: cowsay build job
+on: workflow_dispatch
+jobs:
+  cowsay_build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: install cowsay
+        run: apt install cowsay -y
+      - name: cowsay build file
+        run: cowsay -f dragon "Fire!" > dragon.txt
+  cowsay_test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: test cowsay
+        run: cat dragon.txt
