@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: install cowsay
-        run: apt install cowsay -y
+        run: sudo apt install cowsay -y
       - name: cowsay build file
         run: cowsay -f dragon "Fire!" > dragon.txt
   cowsay_test:
