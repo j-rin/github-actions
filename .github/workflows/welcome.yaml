@@ -1,0 +1,8 @@
+name: sample practice workflow
+on: push
+jobs:
+    welcome-user:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Echo user name
+              run: echo "Hi Jerin"
