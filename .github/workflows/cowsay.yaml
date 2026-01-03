@@ -8,9 +8,18 @@ jobs:
         run: sudo apt install cowsay -y
       - name: cowsay build file
         run: cowsay -f dragon "Fire!" > dragon.txt
+      - name: upload dragon artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: dragon.txt
   cowsay_test:
     runs-on: ubuntu-22.04
     needs: cowsay_build
     steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: my-artifact
+          path: dragon.txt
       - name: test cowsay
         run: cat dragon.txt
