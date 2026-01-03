@@ -10,6 +10,7 @@ jobs:
         run: cowsay -f dragon "Fire!" > dragon.txt
   cowsay_test:
     runs-on: ubuntu-22.04
+    needs: cowsay_build
     steps:
       - name: test cowsay
         run: cat dragon.txt
