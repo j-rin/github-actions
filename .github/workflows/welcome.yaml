@@ -6,3 +6,9 @@ jobs:
         steps:
             - name: Echo user name
               run: echo "Hi Jerin"
+            - name: checkout repo
+              uses: actions/checkout@v6
+            - name: List files
+              run: ls -lart
+            - name: View Readme file
+              run: cat README.md
